@@ -50,9 +50,9 @@
                                         <td>
                                             <a href="<?= base_url("spv/analisis/edit/") . $jns->id_ado  ?>" class="btn btn-primary btn-sm">Analisis</a> |
                                             <?php if ($jns->status == 'Sudah Prospek') : ?>
-                                                <a href="<?= base_url("spv/analisis/un_validasi/$jns->id_ado/$jns->jenis_ado")  ?>" class="btn btn-success btn-sm"><i class="fa fa-check"></i></a>
+                                                <a href="<?= base_url("spv/analisis/un_validasi/$jns->id_ado")  ?>" class="btn btn-success btn-sm"><i class="fa fa-check"></i></a>
                                             <?php else : ?>
-                                                <a href="<?= base_url("spv/analisis/validasi/$jns->id_ado/$jns->jenis_ado")  ?>" class="btn btn-secondary btn-sm"><i class="fa fa-check"></i></a>
+                                                <a href="<?= base_url("spv/analisis/validasi/$jns->id_ado")  ?>" class="btn btn-secondary btn-sm"><i class="fa fa-check"></i></a>
                                             <?php endif ?>
 
                                         </td>

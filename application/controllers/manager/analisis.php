@@ -104,10 +104,9 @@ class analisis extends CI_Controller
 		redirect(site_url('manager/analisis/analisis_aksi/' . $jenis_ado));
 	}
 
-	public function validasi($id_ado, $jenis_ado)
+	public function validasi($id_ado)
 	{
-		// $id_ado = $this->input->post('id_ado');
-		// $jenis_ado = $this->input->post('jenis_ado');
+		$jenis_ado = $this->db->query("SELECT jenis_ado from ado where id_ado='$id_ado'")->row()->jenis_ado;
 		$jenis_ado = $this->db->query("SELECT id_jenis from jenis where jenis_ado='$jenis_ado'")->row()->id_jenis;
 
 
@@ -123,10 +122,9 @@ class analisis extends CI_Controller
 		redirect(site_url('manager/analisis/analisis_aksi/' . $jenis_ado));
 	}
 
-	public function un_validasi($id_ado, $jenis_ado)
+	public function un_validasi($id_ado)
 	{
-		// $id_ado = $this->input->post('id_ado');
-		// $jenis_ado = $this->input->post('jenis_ado');
+		$jenis_ado = $this->db->query("SELECT jenis_ado from ado where id_ado='$id_ado'")->row()->jenis_ado;
 		$jenis_ado = $this->db->query("SELECT id_jenis from jenis where jenis_ado='$jenis_ado'")->row()->id_jenis;
 
 		$data = array(
