@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2022 at 04:52 PM
+-- Generation Time: Sep 05, 2022 at 08:38 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -50,7 +50,7 @@ INSERT INTO `ado` (`id_ado`, `nama_ado`, `alamat_ado`, `foto_ado`, `telepon_ado`
 (3, 'BNI', 'jalan jalan', 'budidaya-bebek-petelur-1280x720.jpg', '8978685', 'kantor cabang', 'Bank', 'Sudah Prospek', 100, '7/26/2022'),
 (4, 'Pasar Baru', 'jalan pasar baru', '81aYbKXneGL__SL1500_.jpg', '231313', 'berisi banyak barang seperti pakaian dan kain', 'Pasar', 'Belum Prospek', 100, '7/28/2022'),
 (5, 'kecamatan sukasuka', 'jalan suka senang', '1.png', '9798798789', 'kantor kecamatan', 'Kecamatan', 'Sudah Prospek', 300, '7/28/2022'),
-(6, 'camat', 'suaka ', '81aYbKXneGL__SL1500_1.jpg', '353453', 'merupakan swalayan', 'Kecamatan', 'Sudah Prospek', 450, '8/20/2022'),
+(6, 'camat', 'suaka ', '81aYbKXneGL__SL1500_1.jpg', '353453', 'merupakan swalayan', 'Kecamatan', 'Sudah Prospek', 45, '8/20/2022'),
 (7, 'Buahdua', 'Buahdua', 'default.jpg', '123', 'null', 'Kecamatan', 'Belum Prospek', 14, '8/20/2022'),
 (8, 'Cibugel', 'Cibugel', 'default.jpg', '123', 'null', 'Kecamatan', 'Belum Prospek', 7, '8/20/2022'),
 (9, 'Cimalaka', 'Cimalaka', 'default.jpg', '123', 'null', 'Kecamatan', 'Belum Prospek', 14, '8/20/2022'),
@@ -223,7 +223,21 @@ INSERT INTO `ado` (`id_ado`, `nama_ado`, `alamat_ado`, `foto_ado`, `telepon_ado`
 (176, 'Sinarmas Multifinance', 'Jalan Mayor Abdurahman No 180', 'default.jpg', '267', 'null', 'Non-Bank', 'Belum Prospek', 54, '8/20/2022'),
 (177, 'PT Mega Central Finance', 'Jalan Prabu Geusan Ulun No 92', 'default.jpg', '268', 'null', 'Non-Bank', 'Belum Prospek', 68, '8/20/2022'),
 (178, 'PT Mega Auto Finance', 'Jalan Prabu Geusan Ulun No 92', 'default.jpg', '269', 'null', 'Non-Bank', 'Belum Prospek', 36, '8/20/2022'),
-(179, 'Kecamatan buah dua', 'buah dua', '3643784_bell_notification_notify_reminder_ring_icon.png', '09876654', 'Kecamatan', 'Kecamatan', 'Sudah Prospek', 0, '');
+(179, 'Kecamatan buah dua', 'buah dua', '3643784_bell_notification_notify_reminder_ring_icon.png', '09876654', 'Kecamatan', 'Kecamatan', 'Sudah Prospek', 0, ''),
+(180, 'asdasd', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'Instagram_post_-_1_(15).jpg', '+6289646817762', 'asdasd', 'Kecamatan', 'Belum Prospek', 0, ''),
+(181, 'asdasd', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'Instagram_post_-_1_(15)1.jpg', '+6289646817762', 'asdasd', 'Kecamatan', 'Belum Prospek', 0, ''),
+(182, 'asdasd', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'Instagram_post_-_1_(15)2.jpg', '+6289646817762', 'asdasd', 'Kecamatan', 'Sudah Prospek', 0, ''),
+(183, 'tes', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'Instagram_post_-_1_(15)3.jpg', '+6289646817762', 'asd', 'Asuransi', 'Belum Prospek', 123, ''),
+(184, '123', '123', 'logo_akb_MAR-04_copy.png', '213', '123', 'Kecamatan', 'Belum Prospek', 123, ''),
+(185, 'asdasd', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'logo_akb_MAR-04_copy1.png', '+6289646817762', '123', 'Kecamatan', 'Belum Prospek', 2, ''),
+(186, 'pasar', 'dkl', 'logo_akb_MAR-04_copy2.png', '90', 'asdasd', 'Pasar', 'Belum Prospek', 999, ''),
+(187, 'b', 'as', 'logo_akb_AUG-01.png', '21', 'asdasd', 'Bank', 'Belum Prospek', 1, ''),
+(188, 'anu', '090', 'hidup_mahasiswa.png', '09', 'asd', 'Kecamatan', 'Belum Prospek', 123, ''),
+(189, 'asdasd', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'EGO_WALLPAPER.jpg', '+6289646817762', 'asd', 'Kecamatan', 'Belum Prospek', 12, ''),
+(190, 'asdasd', 'Jalan Sarijadi Blok 02 No 118 Rt 06/02', 'hijau.jpg', '+6289646817762', 'as', 'Perusahaan', 'Belum Prospek', 12, ''),
+(191, 'abc', 'asdk', 'hidup_mahasiswa-01.png', '89', 'asdasd', 'Kecamatan', 'Belum Prospek', 99, ''),
+(192, 'asdasd', 'asdasd', 'hidup_mahasiswa-011.png', '341232', 'asdasd', 'Asuransi', 'Belum Prospek', 99, ''),
+(193, 'asdasd', 'asdasd', 'blue_png.png', '123213', 'asdsad', 'Non-Bank', 'Belum Prospek', 99, '');
 
 -- --------------------------------------------------------
 
@@ -305,7 +319,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `ado`
 --
 ALTER TABLE `ado`
-  MODIFY `id_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+  MODIFY `id_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 
 --
 -- AUTO_INCREMENT for table `jenis`

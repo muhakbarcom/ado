@@ -4,7 +4,7 @@ class Bank extends CI_Controller
 {
 	public function index()
 	{
-		$data['bank'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='Bank'")->result();
+		$data['bank'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='Bank' order by id_ado DESC")->result();
 		$this->load->view('template/header');
 		$this->load->view('manager/sidebar');
 		$this->load->view('manager/v_bank', $data);
@@ -51,6 +51,7 @@ class Bank extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
+					'estimasi' => $this->input->post('potensi_ado'),
 					'foto_ado' 		=> $hasil['file_name']
 				);
 				$this->Ado_model->insert_data($data, 'ado');
@@ -123,6 +124,7 @@ class Bank extends CI_Controller
 						'keterangan_ado' => $keterangan_ado,
 						'jenis_ado'		=> $jenis_ado,
 						'status'		=> $status,
+						'estimasi' => $this->input->post('potensi_ado'),
 						'foto_ado' 		=> $hasil['file_name']
 					);
 					$where = array(
@@ -156,6 +158,7 @@ class Bank extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
+					'estimasi' => $this->input->post('potensi_ado'),
 					'foto_ado' 		=> $foto_ado
 				);
 				$where = array(

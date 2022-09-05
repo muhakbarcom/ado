@@ -4,7 +4,7 @@ class Asuransi extends CI_Controller
 {
 	public function index()
 	{
-		$data['asuransi'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='Asuransi'")->result();
+		$data['asuransi'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='Asuransi' order by id_ado DESC")->result();
 		$this->load->view('template/header');
 		$this->load->view('spv/sidebar');
 		$this->load->view('spv/v_asuransi', $data);
@@ -20,7 +20,8 @@ class Asuransi extends CI_Controller
 	public function tambah_asuransi_aksi()
 	{
 
-		// print_r($_POST);die;
+		// print_r($_POST);
+		// die;
 		$this->form_validation->set_rules('nama_ado', 'Nama Daerah Operasi', 'required');
 		$this->form_validation->set_rules('alamat_ado', 'Alamat', 'required');
 		$this->form_validation->set_rules('telepon_ado', 'Telepon', 'required');
@@ -51,7 +52,8 @@ class Asuransi extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
-					'foto_ado' 		=> $hasil['file_name']
+					'foto_ado' 		=> $hasil['file_name'],
+					'estimasi' => $this->input->post('potensi_ado'),
 				);
 				$this->Ado_model->insert_data($data, 'ado');
 				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -123,7 +125,8 @@ class Asuransi extends CI_Controller
 						'keterangan_ado' => $keterangan_ado,
 						'jenis_ado'		=> $jenis_ado,
 						'status'		=> $status,
-						'foto_ado' 		=> $hasil['file_name']
+						'foto_ado' 		=> $hasil['file_name'],
+						'estimasi' => $this->input->post('potensi_ado'),
 					);
 					$where = array(
 						'id_ado' => $id,
@@ -156,7 +159,8 @@ class Asuransi extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
-					'foto_ado' 		=> $foto_ado
+					'foto_ado' 		=> $foto_ado,
+					'estimasi' => $this->input->post('potensi_ado'),
 				);
 				$where = array(
 					'id_ado' => $id,

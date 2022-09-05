@@ -37,6 +37,11 @@
                                 <?= form_error('keterangan_ado', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
                             <div class="form-group">
+                                <label for="">Potensi</label>
+                                <input type="text" name="potensi_ado" class="form-control" value="<?= $dp->estimasi ?>">
+                                <?= form_error('potensi_ado', '<span class="text-small text-danger">', '</span>') ?>
+                            </div>
+                            <div class="form-group">
                                 <label> Status </label>
                                 <select class="form-control" name="status" id="">
                                     <option value="<?= $dp->status ?>"><?= $dp->status ?></option>

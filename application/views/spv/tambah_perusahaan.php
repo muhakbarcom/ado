@@ -6,7 +6,7 @@
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
-    <form method="POST" action="<?php echo base_url('spv/kecamatan/tambah_kcmt_aksi') ?>" enctype="multipart/form-data">
+    <form method="POST" action="<?php echo base_url('spv/perusahaan/tambah_perusahaan_aksi') ?>" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="">Nama</label>
@@ -34,6 +34,11 @@
             <input type="text" name="keterangan_ado" class="form-control">
             <input type="hidden" name="jenis_ado" value="Kecamatan">
             <?= form_error('keterangan_ado', '<span class="text-small text-danger">', '</span>') ?>
+        </div>
+        <div class="form-group">
+            <label for="">Potensi</label>
+            <input type="text" name="potensi_ado" class="form-control">
+            <?= form_error('potensi_ado', '<span class="text-small text-danger">', '</span>') ?>
         </div>
         <div class="form-group">
             <label for="">Status</label>

@@ -4,23 +4,24 @@ class Asuransi extends CI_Controller
 {
 	public function index()
 	{
-		$data['asuransi'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='Asuransi'")->result();
+		$data['asuransi'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='Asuransi' order by id_ado DESC")->result();
 		$this->load->view('template/header');
-		$this->load->view('manager/sidebar');
-		$this->load->view('manager/v_asuransi', $data);
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/v_asuransi', $data);
 		$this->load->view('template/footer');
 	}
 	public function tambah_data()
 	{
 		$this->load->view('template/header');
-		$this->load->view('manager/sidebar');
-		$this->load->view('manager/tambah_asuransi');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/tambah_asuransi');
 		$this->load->view('template/footer');
 	}
 	public function tambah_asuransi_aksi()
 	{
 
-		// print_r($_POST);die;
+		// print_r($_POST);
+		// die;
 		$this->form_validation->set_rules('nama_ado', 'Nama Daerah Operasi', 'required');
 		$this->form_validation->set_rules('alamat_ado', 'Alamat', 'required');
 		$this->form_validation->set_rules('telepon_ado', 'Telepon', 'required');
@@ -51,7 +52,8 @@ class Asuransi extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
-					'foto_ado' 		=> $hasil['file_name']
+					'foto_ado' 		=> $hasil['file_name'],
+					'estimasi' => $this->input->post('potensi_ado'),
 				);
 				$this->Ado_model->insert_data($data, 'ado');
 				$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -60,7 +62,7 @@ class Asuransi extends CI_Controller
 				    <span aria-hidden="true">&times;</span>
 				  </button>
 				</div>');
-				redirect('manager/asuransi');
+				redirect('admin/asuransi');
 			}
 		}
 	}
@@ -68,8 +70,8 @@ class Asuransi extends CI_Controller
 	{
 		$data['detail'] = $this->Ado_model->ambil_detail_lap($id);
 		$this->load->view('template/header');
-		$this->load->view('manager/sidebar');
-		$this->load->view('manager/detail_asuransi', $data);
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/detail_asuransi', $data);
 		$this->load->view('template/footer');
 	}
 	public function update_data($id)
@@ -78,8 +80,8 @@ class Asuransi extends CI_Controller
 		$data['daop'] = $this->db->query("SELECT * FROM ado ad, jenis js WHERE ad.jenis_ado=js.jenis_ado AND ad.id_ado='$id'")->result();
 		$data['jenis'] = $this->Ado_model->get_data('jenis')->result();
 		$this->load->view('template/header');
-		$this->load->view('manager/sidebar');
-		$this->load->view('manager/update_asuransi', $data);
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/update_asuransi', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -123,7 +125,8 @@ class Asuransi extends CI_Controller
 						'keterangan_ado' => $keterangan_ado,
 						'jenis_ado'		=> $jenis_ado,
 						'status'		=> $status,
-						'foto_ado' 		=> $hasil['file_name']
+						'foto_ado' 		=> $hasil['file_name'],
+						'estimasi' => $this->input->post('potensi_ado'),
 					);
 					$where = array(
 						'id_ado' => $id,
@@ -136,7 +139,7 @@ class Asuransi extends CI_Controller
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>');
-					redirect('manager/asuransi');
+					redirect('admin/asuransi');
 				}
 			} else {
 				$id 						= $this->input->post('id_ado');
@@ -156,7 +159,8 @@ class Asuransi extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
-					'foto_ado' 		=> $foto_ado
+					'foto_ado' 		=> $foto_ado,
+					'estimasi' => $this->input->post('potensi_ado'),
 				);
 				$where = array(
 					'id_ado' => $id,
@@ -169,7 +173,7 @@ class Asuransi extends CI_Controller
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>');
-				redirect('manager/asuransi');
+				redirect('admin/asuransi');
 			}
 		}
 	}
@@ -183,6 +187,6 @@ class Asuransi extends CI_Controller
 				    <span aria-hidden="true">&times;</span>
 				  </button>
 				</div>');
-		redirect('manager/asuransi');
+		redirect('admin/asuransi');
 	}
 }

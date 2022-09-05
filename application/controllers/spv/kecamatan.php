@@ -4,7 +4,7 @@ class kecamatan extends CI_Controller
 {
 	public function index()
 	{
-		$data['kecamatan'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='kecamatan'")->result();
+		$data['kecamatan'] = $this->db->query("SELECT * FROM ado WHERE jenis_ado='kecamatan' order by id_ado DESC")->result();
 		$this->load->view('template/header');
 		$this->load->view('spv/sidebar');
 		$this->load->view('spv/v_kecamatan', $data);
@@ -12,15 +12,15 @@ class kecamatan extends CI_Controller
 	}
 	public function tambah_data()
 	{
+		$data['jenis_ado'] = $this->db->query("SELECT * FROM jenis")->result(); // JENIS
 		$this->load->view('template/header');
 		$this->load->view('spv/sidebar');
-		$this->load->view('spv/tambah_kcmt');
+		$this->load->view('spv/tambah_kcmt', $data); // JENIS
 		$this->load->view('template/footer');
 	}
+
 	public function tambah_kcmt_aksi()
 	{
-
-		// print_r($_POST);die;
 		$this->form_validation->set_rules('nama_ado', 'Nama Daerah Operasi', 'required');
 		$this->form_validation->set_rules('alamat_ado', 'Alamat', 'required');
 		$this->form_validation->set_rules('telepon_ado', 'Telepon', 'required');
@@ -51,6 +51,7 @@ class kecamatan extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
+					'estimasi' => $this->input->post('potensi_ado'),
 					'foto_ado' 		=> $hasil['file_name']
 				);
 				$this->Ado_model->insert_data($data, 'ado');
@@ -123,6 +124,7 @@ class kecamatan extends CI_Controller
 						'keterangan_ado' => $keterangan_ado,
 						'jenis_ado'		=> $jenis_ado,
 						'status'		=> $status,
+						'estimasi' => $this->input->post('potensi_ado'),
 						'foto_ado' 		=> $hasil['file_name']
 					);
 					$where = array(
@@ -156,6 +158,7 @@ class kecamatan extends CI_Controller
 					'keterangan_ado' => $keterangan_ado,
 					'jenis_ado'		=> $jenis_ado,
 					'status'		=> $status,
+					'estimasi' => $this->input->post('potensi_ado'),
 					'foto_ado' 		=> $foto_ado
 				);
 				$where = array(

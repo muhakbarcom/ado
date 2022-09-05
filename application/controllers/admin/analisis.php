@@ -15,6 +15,7 @@ class analisis extends CI_Controller
 		$this->load->view('admin/v_analisis', $data);
 		$this->load->view('template/footer');
 	}
+
 	public function analisis_aksi()
 	{
 		$this->load->model('ado_model');

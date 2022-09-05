@@ -8,7 +8,7 @@
 
                     <?php foreach ($daop as $dp) : ?>
 
-                        <form method="POST" action="<?= base_url('manager/kecamatan/update_kcmt_aksi') ?>" enctype="multipart/form-data">
+                        <form method="POST" action="<?= base_url('manager/NonBank/update_nonbank_aksi') ?>" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label> Nama </label>
                                 <input type="hidden" name="id_ado" value="<?= $dp->id_ado ?>">
@@ -35,6 +35,11 @@
                                 <input type="text" name="keterangan_ado" class="form-control" value="<?= $dp->keterangan_ado ?>">
                                 <input type="hidden" name="jenis_ado" value="<?= $dp->jenis_ado ?>">
                                 <?= form_error('keterangan_ado', '<div class="text-small text-danger">', '</div>') ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Potensi</label>
+                                <input type="text" name="potensi_ado" class="form-control" value="<?= $dp->estimasi ?>">
+                                <?= form_error('potensi_ado', '<span class="text-small text-danger">', '</span>') ?>
                             </div>
                             <div class="form-group">
                                 <label> Status </label>
